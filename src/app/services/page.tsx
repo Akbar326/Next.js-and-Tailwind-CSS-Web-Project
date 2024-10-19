@@ -1,5 +1,8 @@
-export default function ServicesPage() {
-  throw new Error("This is an error");
+const ServicesPage = () => {
+  if (process.env.NODE_ENV === 'development') {
+    throw new Error("This is an error");
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400">
       <h1 className="text-5xl font-extrabold mb-6 text-blue-700 drop-shadow-lg hover:text-blue-900 transition duration-300 ease-in-out">
@@ -10,4 +13,6 @@ export default function ServicesPage() {
       </p>
     </div>
   );
-}
+};
+
+export default ServicesPage;
